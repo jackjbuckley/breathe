@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- Content-Security-Policy allow *anything* (added policy to stop warnings) -->
+        <meta http-equiv="Content-Security-Policy" content="default-src * gap://ready file:; style-src 'self' 'unsafe-inline' *; script-src 'self' 'unsafe-inline' 'unsafe-eval' *">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/index.css" />
+		
+        
+        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+            <link href="css/style.css" rel="stylesheet">
+                
+                <!-- IF using Sass (run gulp sass first), then remove the CSS include above
+                 <link href="css/ionic.app.css" rel="stylesheet">
+                 -->
+                
+                <!-- ionic/angularjs js -->
+                <script src="lib/ionic/js/ionic.bundle.js"></script>
+                
+                <!-- cordova script (this will be a 404 during development) -->
+                <script src="cordova.js"></script>
+                
+                <!-- your app's js -->
+                <script src="js/app.js"></script>
+                
+        <title>Anxiety</title>
+        
+        <style id="stylesheet">
+            #heartIcon {
+                fill:red;
+            }
+        </style>
+        
+    </head>
+    
+    <body onload="scan(); iosTop();">
+			<header id="header">
+				<p>Breathe</p>
+				<div id="profileHolder"><div id="profile"></div></div>
+			</header>
+            
+		<div id="circle">
+			<p id="incoming"></h1>
+		</div>
+        
+        <div id="settings">
+            <label class="item item-input item-select">
+                <div class="input-label">
+                    Background Wallpaper
+                </div>
+                <select id="backgroundChoice">
+                    <option value="bluedusk.jpg">Blue Dusk</option>
+                    <option selected value="sunset.jpg">Sunset on the Beach</option>
+                    <option value="stargazing.jpg">Stargazing</option>
+                </select>
+            </label>
+            
+            <button onclick="closeSettings()" class="button button-dark">
+                Done
+            </button>
+        </div>
+        
+        
+		<footer id="footer">
+			<!--icons -->
+			<div id="iconHolder">
+				<td><svg id="heartIcon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						 viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+						<g>
+							<path d="M429.9,95.6c-40.4-42.1-106-42.1-146.4,0L256,124.1l-27.5-28.6c-40.5-42.1-106-42.1-146.4,0c-45.5,47.3-45.5,124.1,0,171.4
+								L256,448l173.9-181C475.4,219.7,475.4,142.9,429.9,95.6z"/>
+						</g>
+				</svg></td>
+
+				<td><svg onclick="window.location.href='settings.html'" style="fill:white" id="clockIcon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+						  viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+						<g>
+							<path d="M256,48C141.1,48,48,141.1,48,256s93.1,208,208,208c114.9,0,208-93.1,208-208S370.9,48,256,48z M273,273H160v-17h96V128h17
+								V273z"/>
+						</g>
+				</svg></td>
+
+				<td><svg onclick="showSettings()" id="gearIcon" version="1.1" style="fill:white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+							 viewBox="0 0 512 512" enable-background="new 0 0 512 512" xml:space="preserve">
+						<path d="M416.349,256.046c-0.001-21.013,13.143-38.948,31.651-46.062c-4.887-20.466-12.957-39.7-23.664-57.139
+							c-6.375,2.836-13.23,4.254-20.082,4.254c-12.621,0-25.238-4.811-34.871-14.442c-14.863-14.863-18.248-36.846-10.18-54.97
+							C341.768,76.973,322.54,68.895,302.074,64C294.971,82.529,277.027,95.69,256,95.69c-21.025,0-38.969-13.161-46.073-31.69
+							c-20.466,4.895-39.693,12.973-57.128,23.688c8.068,18.122,4.683,40.104-10.181,54.97c-9.631,9.631-22.25,14.443-34.871,14.443
+							c-6.854,0-13.706-1.419-20.083-4.255C76.958,170.284,68.886,189.517,64,209.984c18.509,7.112,31.652,25.049,31.652,46.062
+							c0,21.008-13.132,38.936-31.63,46.054c4.898,20.466,12.976,39.692,23.692,57.128c6.361-2.821,13.198-4.232,20.032-4.232
+							c12.622,0,25.239,4.812,34.871,14.443c14.841,14.841,18.239,36.781,10.215,54.889c17.438,10.71,36.664,18.783,57.13,23.673
+							c7.128-18.479,25.046-31.596,46.038-31.596c20.992,0,38.91,13.115,46.037,31.596c20.468-4.89,39.693-12.964,57.132-23.675
+							c-8.023-18.106-4.626-40.046,10.216-54.887c9.629-9.632,22.248-14.444,34.868-14.444c6.836,0,13.67,1.411,20.033,4.233
+							c10.716-17.436,18.794-36.662,23.692-57.128C429.48,294.981,416.349,277.052,416.349,256.046z M256.9,335.9c-44.3,0-80-35.9-80-80
+							c0-44.101,35.7-80,80-80c44.299,0,80,35.899,80,80C336.9,300,301.199,335.9,256.9,335.9z"/>
+				</svg></td>
+			</div>
+		</footer>
+		
+		<audio id="connectSound">
+			<source src="connect.mp3" type="audio/mpeg">	
+			</audio>
+		
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/fastclick.js"></script>
+        <script type="text/javascript" src="js/disconnector.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+		<script>
+			
+		</script>
+    </body>
+</html>

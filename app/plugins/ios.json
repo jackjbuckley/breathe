@@ -1,0 +1,79 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {}
+    },
+    "installed_plugins": {
+        "cordova-plugin-battery-status": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-camera": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-media-capture": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-console": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-contacts": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-device": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-device-motion": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-device-orientation": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-dialogs": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-file-transfer": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-geolocation": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-globalization": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-inappbrowser": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-media": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-network-information": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-splashscreen": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-statusbar": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-vibration": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-whitelist": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-ble-central": {
+            "PACKAGE_NAME": "$(PRODUCT_BUNDLE_IDENTIFIER)"
+        }
+    },
+    "dependent_plugins": {
+        "cordova-plugin-compat": {
+            "PACKAGE_NAME": "Breathe"
+        },
+        "cordova-plugin-file": {
+            "PACKAGE_NAME": "Breathe"
+        }
+    }
+}

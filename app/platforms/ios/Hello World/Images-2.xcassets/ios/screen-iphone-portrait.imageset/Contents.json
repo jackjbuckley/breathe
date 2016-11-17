@@ -1,0 +1,33 @@
+{
+  "images" : [
+    {
+      "idiom" : "universal",
+      "filename" : "screen-iphone-portrait.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "screen-iphone-portrait-736h.png",
+      "subtype" : "736h",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "screen-iphone-portrait-667h.png",
+      "subtype" : "667h",
+      "scale" : "1x"
+    }
+  ],
+  "info" : {
+    "version" : 1,
+    "author" : "xcode"
+  }
+}

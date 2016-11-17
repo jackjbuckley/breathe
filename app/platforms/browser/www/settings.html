@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then remove the CSS include above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+
+    <!-- your app's js -->
+    <script src="js/app.js"></script>
+    <script src="js/moment.js"></script>
+    <script src="js/Chart.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+  </head>
+
+  <body ng-app="starter" style="background:url('sunset.jpg')">
+      <div style="-webkit-backdrop-filter:blur(10px)">
+          <canvas id="myChart" height="200" width="200"></canvas>
+      </div>
+      <script>
+          var timeLog = localStorage.getItem("timeLog");
+          
+          timeLog = JSON.parse(timeLog);
+          
+          var dataLog = localStorage.getItem("dataLog");
+          
+          dataLog = JSON.parse(dataLog);
+          
+          var data = {
+              labels: timeLog,
+              labelColor: 'white',
+              datasets: [{
+                         label: 'GSR Value',
+                         data: dataLog,
+                         backgroundColor: 'rgba(255,99,71, 0.8)',
+                         defaultFontColor: 'white',
+                         color: 'white',
+                         xLabels: 'Time'
+                         }]
+          }
+           Chart.defaults.global.defaultFontColor = '#fff';
+          var ctx = document.getElementById("myChart");
+          var chartInstance = new Chart(ctx, {
+                                         type: 'line',
+                                        data: data,
+                                         options: {
+                                        defaultFontColor: 'white',
+                                        title: {
+                                        display: true,
+                                        text: 'GSR Reading',
+                                        fontColor: 'white',
+                                        fontSize: 20
+                                        },
+                                        legend: {
+                                        display: false,
+                                        },
+                                        scales: {
+                                         xAxes: [{
+                                                 type: 'time',
+                                                 time: {
+                                                 displayFormats: {
+                                                 quarter: 'MMM YYYY'
+                                                 }
+                                                 }
+                                                 }]
+                                         }
+                                         }
+                                        });
+          </script>
+      
+      <button onclick="window.location.href='settings.html'">Reload</button>
+  </body>
+</html>
